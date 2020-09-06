@@ -1,0 +1,417 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2b2b2b;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navigation {
+    background-color: #2b2b2b;
+    color: white;
+    height: 50px;
+
+    animation-name: navegacao;
+    animation-duration: 4s;
+}
+
+/* RESETA navigation (não precisa pois tem o css reset)
+.navigation ul {
+    margin-top: 0;
+    list-style: none;
+    padding-left: 0;
+}
+*/
+
+.navigation ul {
+    margin-top: 0;
+    list-style: none;
+    padding-left: 0;
+    text-align: right;
+    height: 50px;
+    /*background-color: yellow;*/
+    
+}
+
+.navigation li {
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 30px;
+    /*background-color: green;*/
+    line-height: 50px; /*height não dá certo pois não fica centralizado */
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+     color: #f27609;
+}
+
+.navigation li.threeline-icon {
+    display: none;
+}
+
+.navigation li.threeline-icon:hover {
+    color: #f27609;
+    cursor: pointer; /* modifica o ponteiro no pc quando passa por cima */
+}
+
+.capa {
+    color: white;
+    font-size: 0;
+}
+
+.capa span {
+    color: #f27609;
+    display: block;
+}
+
+.capa div {
+    display: inline-block;
+    height: 650px;
+}
+
+.profile-pic {
+    /* css debug - colorir tudo para saber o que está acontecendo */
+    /* background-color: yellow; */
+    width: 40%;
+    text-align: center;
+
+    /*animação*/
+    animation-name: profile-capa;
+    animation-duration: 2s;
+}
+
+.profile-pic img {
+    width: 350px;
+    border-radius: 350px;
+    margin-top: 100px;
+}
+
+.profile-title {
+    /* background-color: green; */
+    vertical-align: top;
+    width:  60%; /*59%;*/
+
+    /*animação*/
+    animation-name: titulo-capa;
+    animation-duration: 2s;
+}
+
+.profile-title h1 {
+    font-size: 58px;
+    text-transform: uppercase;
+    margin-top: 200px ;
+    font-weight: 400;
+    line-height: 54px;
+}
+
+.profile-title h2 {
+    font-size: 16px;
+    font-weight: 100;
+    margin-top: 15px;
+}
+
+
+/* pagina curriculo.html */
+
+.main {
+    padding: 80px 180px 80px 100px;
+    /*padding-top: 80px;
+    padding-right: 180px;
+    padding-bottom: 80px;
+    padding-left: 100px;*/
+
+    animation-name: conteudo;
+    animation-duration: 2s;
+}
+
+.cv-pic {
+    float: left; /*right*/
+    width: 220px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.main h1 {
+    color: white;
+    font-weight: normal;
+}
+
+.main h2 {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-top: 40px;
+}
+
+.main h3 {
+    color: #f27609;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.main p {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 28px;
+    text-align: justify;
+}
+
+.breadcrumbs {
+    list-style: none;
+    padding-left: 0;
+    color: grey;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+}
+
+.breadcrumbs a {
+    color: grey
+}
+
+.social-img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+/* portfolio.html */
+
+.miniatura {
+    width: 320px;
+    height: 320px;
+    /*background-color: yellow;*/
+    /*background-image: url(../img/ccb.jpg);*/
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    /*background-repeat: no-repeat;*/
+    background-size: contain;
+    overflow: hidden; /*visible scroll*/
+}
+
+.miniatura a {
+    text-decoration: none;
+}
+
+.blackbox {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    padding-top: 120px;
+    transition: 1s; /* tem que usar também para voltar para o normal */
+}
+
+/* hover já é como se fosse uma animação */
+/* tem que usar o transition para ir para o hover e para voltar para o normal */
+.blackbox:hover {
+    opacity: 0.8;
+    transition: 1s;
+}
+
+.blackbox-text {
+    text-align: center;
+}
+
+.blackbox-text h1 {
+    font-size: 16px;
+    color: #f27609;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+
+.blackbox-text h2 {
+    text-transform: none;
+    font-weight: 100;
+    margin-top: 10px;
+}
+
+
+/* webdesign-ccb.html e webdesign-psp.html */
+
+.foto-trabalhos {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.back-link {
+    color: #f27609;
+}
+
+/* leftarrow css entity */
+/* https://www.toptal.com/designers/htmlarrows/arrows/left-arrow/ */
+
+.back-link::before {
+    content: "\2190    ";
+}
+
+
+/* Animações */
+/* toque diferente para não ficar tão simples o site */
+/* 0% do tempo, 100% do tempo */
+/* pode usar qualquer outra propriedade de css */
+/* css transform */
+/* css animation keyframes */
+
+@keyframes profile-capa {
+    /*0% {opacity: 0;}
+    100% {opacity: 1;}
+    0% {background-color: yellow;}
+    100% {background-color: blue;}
+    0% {transform: rotate(45deg);}
+    100% {transform: rotate(0deg);}*/
+    0% {opacity: 0; transform: translate(0px,  20px)}
+    100% {opacity: 1; transform: translate(opx, 0px)}
+}
+
+@keyframes titulo-capa {
+    0% {opacity: 0; transform: translate(0px, -20px)}
+    100% {opacity: 1; transform: translate(opx, 0px)}
+}
+
+@keyframes navegacao {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes conteudo {
+    0% {opacity: 0; transform: translate(-20px, 0px)}
+    100% {opacity: 1; transform: translate(opx, 0px)}
+}
+
+
+/* deixando o website resposivo com CSS Media Query */
+/* media query */
+/* logia do design resposivo */
+
+@media (max-width: 1000px) {
+
+/*.navigation {
+    background-color: yellow;
+}*/
+
+.navigation li {
+    display: none;
+}
+
+.navigation li.threeline-icon {
+    display: inline-block;
+}
+
+
+.capa div {
+    display: block;
+    height: auto;
+}
+
+.profile-pic {
+    /*background-color: yellow;*/
+    width: 100%;
+}
+
+.profile-pic img {
+    margin-top: 0;
+    max-width: 80%; /*img nunca ser maior que 80% do tamanho da tela*/ 
+}
+
+.profile-title {
+    /*background-color: green;*/
+    text-align: center;
+    width: 100%;
+
+}
+
+.profile-title h1 {
+    margin-top: 30px ;
+    font-size: 36px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.profile-title h2 {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.main {
+    padding: 10px 5% 40px 5%;
+}
+
+.main a { /* pode criar um outro class no-break para só esse elemento mesmo */
+    /* 2 linhas seguintes: css break long line of text */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.main p {
+    text-align: left;
+    line-height: 30px;
+}
+
+.breadcrumbs li {
+    font-size: 12px;
+}
+
+.cv-pic {
+    float: none;
+    max-width: 100%;
+    margin-right: 0px;
+}
+
+.miniatura {
+    max-width: 100%;
+    background-size: auto 100%; /* largura altura */
+}
+
+.blackbox {
+    opacity: 0.8;
+}
+
+.menujs {
+    /*background-color: blue;*/
+    height: auto;
+    /*overflow: hidden; esconder o que passa do elemento */
+
+}
+
+.menujs ul {
+    /*background-color: blue;*/
+    height: auto;
+    text-align: center;
+    padding-right: 15%;
+    padding-left: 15%;
+    
+}
+
+.menujs li {
+    display: block; /* cada um em sua linha */
+    border-bottom: solid grey 1px; /*w3 schools border: tipos de borda que pode usar*/
+    width: 100%;
+    padding: 0;
+}
+
+}
+
+
+/* o que vem depois prevalece */
+
+/*
+dominio: o seu link na web
+hosting: onde vai hospedar os arquivos do seu site
+free hosting
+*/
