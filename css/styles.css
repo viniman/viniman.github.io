@@ -119,6 +119,21 @@ body {
     margin-top: 15px;
 }
 
+.social {
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-size: 30px;
+    
+}
+
+.social a {
+    color: inherit;
+}
+
+.social-icon {
+    margin: 0 10px;
+    
+}
 
 /* pagina curriculo.html */
 
@@ -211,14 +226,14 @@ body {
     background-color: black;
     opacity: 0;
     padding-top: 120px;
-    transition: 1s; /* tem que usar também para voltar para o normal */
+    transition: 0.35s; /* tem que usar também para voltar para o normal */
 }
 
 /* hover já é como se fosse uma animação */
 /* tem que usar o transition para ir para o hover e para voltar para o normal */
 .blackbox:hover {
     opacity: 0.8;
-    transition: 1s;
+    transition: 0.35s;
 }
 
 .blackbox-text {
